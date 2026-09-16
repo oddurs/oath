@@ -1,0 +1,205 @@
+# cairn.toml — the schema for Oath's roadmap and issues.
+#
+#   cairn config          show the resolved schema
+#   cairn check           validate every item against it
+#   man cairn             full reference
+
+format = 3
+
+[project]
+name = "oath"
+dir = "cairn/items"
+id_width = 4
+default_type = "feature"
+default_status = "backlog"
+
+# ─── Item types ──────────────────────────────────────────────────────────────
+
+[[type]]
+name = "feature"
+icon = "+"
+color = "cyan"
+template = """
+## Problem
+
+## Proposal
+
+## Acceptance criteria
+
+- [ ]
+"""
+
+[[type]]
+name = "bug"
+icon = "!"
+color = "red"
+template = """
+## What happens
+
+## What should happen
+
+## Reproduction
+
+1.
+"""
+
+[[type]]
+name = "spike"
+icon = "?"
+color = "magenta"
+description = "a timeboxed question; closes with a written answer"
+template = """
+## Question
+
+## Timebox
+
+## Options considered
+
+## Answer
+
+_(fill in before closing; a spike without an answer was wasted)_
+
+## Spawns
+
+- 
+"""
+
+[[type]]
+name = "chore"
+icon = "~"
+color = "gray"
+
+[[type]]
+name = "docs"
+icon = "*"
+color = "blue"
+
+[[type]]
+name = "milestone"
+groups = "one"
+inverse = "scheduled"
+description = "a release, or whatever this project ships"
+
+# ─── Statuses ────────────────────────────────────────────────────────────────
+
+[[status]]
+name = "backlog"
+category = "open"
+color = "gray"
+
+[[status]]
+name = "planned"
+category = "open"
+color = "blue"
+
+[[status]]
+name = "doing"
+label = "in progress"
+category = "active"
+color = "yellow"
+
+[[status]]
+name = "blocked"
+category = "active"
+color = "red"
+
+[[status]]
+name = "done"
+category = "done"
+color = "green"
+
+[[status]]
+name = "dropped"
+category = "dropped"
+color = "gray"
+board = false
+
+# ─── Fields ──────────────────────────────────────────────────────────────────
+
+[[field]]
+name = "due"
+kind = "date"
+description = "when a milestone is meant to land"
+
+[[field]]
+name = "part_of"
+kind = "ref"
+target = "*"
+cardinality = "many"
+acyclic = true
+rollup = true
+inverse = "contains"
+description = "a larger piece of work this belongs to"
+
+[[field]]
+name = "priority"
+kind = "enum"
+values = ["p0", "p1", "p2", "p3"]
+default = "p2"
+column = true
+description = "p0 means the milestone does not ship without it"
+
+[[field]]
+name = "effort"
+kind = "enum"
+values = ["s", "m", "l", "xl"]
+description = "rough size, never an estimate"
+
+# Subsystems of the interpreter. Derived from the intended crate layout:
+#   syntax   lexer, parser, AST, source positions
+#   types    type checker, oath signatures, holes typing
+#   eval     tree-walking evaluator, values, environments
+#   oath     contract hashing, swearing, keeper store, provenance
+#   effects  effect declarations, handlers, undo journal, rollback
+#   holes    Keep effect, keeper sources (pause, search, external command)
+#   choreo   multi-party oaths, endpoint projection, transports
+#   cli      the `oath` binary: run, swear, repl, trace
+#   stdlib   prelude written in Oath
+#   docs     reference, tutorial, README
+#   infra    CI, release, scripts/task, scripts/agent, fuzzing
+[[field]]
+name = "area"
+kind = "enum"
+values = ["syntax", "types", "eval", "oath", "effects", "holes", "choreo", "cli", "stdlib", "docs", "infra"]
+column = true
+description = "subsystem this touches"
+
+# ─── Saved views ─────────────────────────────────────────────────────────────
+
+[[view]]
+name = "now"
+description = "What is actually being worked on"
+filter = "category=active"
+sort = "priority,id"
+
+[[view]]
+name = "next"
+description = "Planned work for the nearest milestone"
+filter = "status=planned"
+sort = "priority,milestone"
+
+[[view]]
+name = "triage"
+description = "Items that still need a milestone or a priority"
+filter = "milestone=,category!=done"
+columns = ["id", "type", "title", "created"]
+
+# ─── Hooks ───────────────────────────────────────────────────────────────────
+
+[hooks]
+after-create = "cairn render -q"
+after-change = "cairn render -q"
+after-remove = "cairn render -q"
+
+# ─── Rendered roadmap ────────────────────────────────────────────────────────
+
+[render]
+target = "ROADMAP.md"
+title = "Oath roadmap"
+group_by = "milestone"
+include = "category!=dropped"
+checkbox = true
+show_ids = true
+progress = true
+group_by_status = true
+link_items = false
