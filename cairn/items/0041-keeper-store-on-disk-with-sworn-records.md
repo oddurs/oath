@@ -27,6 +27,7 @@ Swearing is evidence, and evidence should persist.
 - [ ] second `oath swear` on an unchanged file does no evaluation and says `cached`
 - [ ] the store is plain files and survives `git clean -X` documentation in README
 - [ ] a corrupt record is reported with its path, not a panic
+- [ ] the sworn record lists dependency keeper hashes used during swearing
 
 ## 2026-09-16
 
@@ -35,4 +36,3 @@ Decision (round 3): `.oath/store` is meant to be committed. It is the evidence a
 ## 2026-09-16
 
 Added criterion (from Unison's dependency-graph caching, docs/research/01): a sworn record lists the keeper hashes of every dependency oath that ran during swearing, so oath who can say which insert the evidence for sort was gathered against.
-- [ ] the sworn record lists dependency keeper hashes used during swearing

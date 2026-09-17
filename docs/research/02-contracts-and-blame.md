@@ -12,6 +12,17 @@ Racket puts contracts at module boundaries: "whenever a value crosses this bound
 - **Higher-order values are wrapped, not inspected.** A function passed through an oath is checked on call, exactly as Racket does.
 - **Laws are postconditions over generated inputs.** A law is a supplier obligation; swearing is the oracle run ahead of time rather than at every call (item 0039).
 
+## The gap this research found
+
+Design by contract has three parts. Oath had two: the signature and laws are supplier obligations, and there was nothing for the client's. That makes every partial oath unkeepable, because the generator produces the inputs the promise was never meant to cover:
+
+```
+oath head : List a -> a
+  law \xs -> elem (head xs) xs      -- false for []
+```
+
+`requires` closes it (item 0121). It is part of the promise and therefore in the hash; it filters generation, so a keeper is never sworn against input it was not promised; and at runtime it blames the caller, exactly as Eiffel intends. Invariants, the third part, have no home in Oath because an oath owns no state; the nearest thing is a law over an effect's cells via `given`/`then` (item 0118).
+
 ## What Oath decides against
 
 A static type checker on the v1.0 path. Every other form of evidence in Oath is dynamic, and the signature is declared, so nothing needs inference. A mistyped keeper fails swearing before it can be called. Static types return when expression-level holes need an expected type; see [06-deferred](06-deferred.md).

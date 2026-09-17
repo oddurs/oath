@@ -22,11 +22,17 @@ There is no static type checker on the v1.0 path. Arguments and results are chec
 
 Grounded in Racket's contract boundaries and Eiffel's design by contract ([research/02](research/02-contracts-and-blame.md)). Item 0096. Static types are deferred with reasons on item 0114.
 
+## 4b. A promise has a caller's half: `requires`
+
+Preconditions filter generation, bound what a keeper is sworn against, and blame the caller at runtime. Without them no partial oath is keepable. Part of the promise, so part of the hash.
+
+Grounded in Eiffel's design by contract ([research/02](research/02-contracts-and-blame.md)). Item 0121.
+
 ## 5. Swearing is small-scope enumeration, smallest first
 
 Laws are checked against every value up to a depth, smallest first, so the first failure is the minimal counterexample without a shrinking step. Function arguments come from a table per signature. Several sworn keepers are run differentially and their disagreements reported.
 
-Grounded in Jackson's small scope hypothesis, SmallCheck, and McKeeman's differential testing ([research/03](research/03-evidence-and-small-scope.md)). Items 0038, 0039, 0119, 0045.
+Grounded in Jackson's small scope hypothesis, SmallCheck, and McKeeman's differential testing ([research/03](research/03-evidence-and-small-scope.md)). Items 0038, 0039, 0119, 0045. The cost, that small scope misses bugs which only appear at size, is recorded on item 0122 rather than hidden: the sworn record stores the depth reached.
 
 ## 6. Sworn records are cached by hash and committed
 

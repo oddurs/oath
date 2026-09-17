@@ -27,6 +27,7 @@ Builtin `effect Keep { keep : Oath -> Keeper }`, irreversible. Evaluating a hole
 
 - [ ] a user handler that returns a fixed body fills the hole in a golden test
 - [ ] a handler returning an unsworn body causes a runtime error saying which check failed
+- [ ] the pretty-printed oath handed to the handler ends with `at call: sort [5,2,9]` when reached from a call with those arguments
 
 ## 2026-09-16
 
@@ -35,4 +36,3 @@ Decision (round 3): `Keep : Str -> Str`. The handler receives the oath pretty-pr
 ## 2026-09-16
 
 Added criterion (from Hazel's hole closures, docs/research/05): the environment at the hole is the live call. The Keep payload appends the actual arguments of the call that reached the hole as a candidate example, marked as such, so a person or a command sees a concrete input for free.
-- [ ] the pretty-printed oath handed to the handler ends with `at call: sort [5,2,9]` when reached from a call with those arguments

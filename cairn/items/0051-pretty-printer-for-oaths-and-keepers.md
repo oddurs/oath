@@ -25,8 +25,8 @@ The command keeper source sends an oath to an external process as text; the paus
 ## Acceptance criteria
 
 - [ ] property test: parse(print(x)) has the same hash as x for every oath in the suite
+- [ ] `oath show sort` prints the declaration of any user type in its signature and the signature line of `sorted` and `length`
 
 ## 2026-09-16
 
 Added criterion (from the typed-holes LLM finding that type definitions in context mattered most, docs/research/05): the printed form includes, transitively, the user type declarations the signature mentions and the signatures of the oaths its laws and examples reference.
-- [ ] `oath show sort` prints the declaration of any user type in its signature and the signature line of `sorted` and `length`

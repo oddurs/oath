@@ -27,4 +27,9 @@ Implement the spike's answer. Following Unison, the canonical form substitutes e
 - [ ] reordering examples, changing whitespace, or renaming a bound variable does not change its hash (tests)
 - [ ] changing the type or any example changes the hash (tests)
 - [ ] changing the promise of an oath referenced in a law changes this oath's hash; changing only that oath's keeper does not (tests)
+- [ ] adding or changing a `requires` clause changes the oath's hash
 - [ ] two oaths in one file with the same hash but different names is a check-time warning
+
+## 2026-09-16
+
+Added criterion (from design by contract, docs/research/02): preconditions are part of the promise.

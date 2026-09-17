@@ -33,7 +33,7 @@
 
 ## v0.2 — v0.2
 
-`··········` 0% · 0 of 20 done · due 2027-01-10
+`··········` 0% · 0 of 21 done · due 2027-01-10
 
 Oaths carry `law` properties checked by small-scope enumeration with the smallest counterexample. State lives in effect cells; every write is journaled, so `try` rolls back correctly without anyone writing an inverse. External ops declare a compensation; irreversible ops are refused where rollback is promised. Effectful keepers can be sworn because the world is rewound after each example, and `given`/`then` let examples and laws speak about state. `oath trace` steps backwards through the journal.
 
@@ -59,6 +59,7 @@ Oaths carry `law` properties checked by small-scope enumeration with the smalles
 - [ ] `0098` Keeper selection: source order, then stored-only keepers; --prefer overrides <sup>feature · p1 · eval</sup>
 - [ ] `0118` Examples and laws over effect state: given and then <sup>feature · p0 · oath</sup>
 - [ ] `0119` Generator: function arguments from a table, polymorphic oaths at Int <sup>feature · p1 · oath</sup>
+- [ ] `0121` Preconditions: requires clauses on oaths <sup>feature · p0 · oath</sup>
 
 ## v0.3 — v0.3
 
@@ -125,7 +126,7 @@ No new surface. The language reference and tutorial are complete, the store form
 
 ## later — later
 
-`··········` 0% · 0 of 14 done
+`··········` 0% · 0 of 15 done
 
 Nothing on a date. Good ideas that are not on the path to v1.0 live here so they stop being argued about. The two big ones, a static type system and multi-party oaths, each carry the reason they were deferred.
 
@@ -145,4 +146,5 @@ Nothing on a date. Good ideas that are not on the path to v1.0 live here so they
 - [ ] `0116` Effect rows on oath signatures <sup>feature · p2 · types</sup>
 - [ ] `0117` Multi-party oaths: choreographies with endpoint projection <sup>feature · p2 · choreo</sup>
 - [ ] `0120` oath fmt: canonical formatting from the pretty-printer <sup>feature · p2 · cli</sup>
+- [ ] `0122` Random generation with shrinking, beyond small scope <sup>feature · p2 · oath</sup>
 
