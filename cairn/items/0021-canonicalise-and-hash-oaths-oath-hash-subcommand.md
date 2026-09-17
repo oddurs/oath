@@ -15,15 +15,16 @@ area: oath
 
 ## Problem
 
-The whole idea is that a call site names a promise by its hash.
+The whole idea is that a call site names a promise by its hash, and a promise means nothing without the promises it refers to.
 
 ## Proposal
 
-Implement the spike's answer. `oath hash file.oath` prints `<name> <hash>` per oath. Hash is over the canonical form only; the name is not included.
+Implement the spike's answer. Following Unison, the canonical form substitutes every referenced oath (in the signature's user types, in laws, in examples) with that oath's hash, so the hash of `sort` pins the promise of `sorted` and `length` that its laws rely on. The name is not included. `oath hash file.oath` prints `<name> <hash>` per oath.
 
 ## Acceptance criteria
 
 - [ ] renaming an oath does not change its hash (test)
 - [ ] reordering examples, changing whitespace, or renaming a bound variable does not change its hash (tests)
 - [ ] changing the type or any example changes the hash (tests)
+- [ ] changing the promise of an oath referenced in a law changes this oath's hash; changing only that oath's keeper does not (tests)
 - [ ] two oaths in one file with the same hash but different names is a check-time warning

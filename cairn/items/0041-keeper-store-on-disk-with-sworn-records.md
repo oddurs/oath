@@ -31,3 +31,8 @@ Swearing is evidence, and evidence should persist.
 ## 2026-09-16
 
 Decision (round 3): `.oath/store` is meant to be committed. It is the evidence and works like a lockfile for a team. README says so; there is no gitignore entry.
+
+## 2026-09-16
+
+Added criterion (from Unison's dependency-graph caching, docs/research/01): a sworn record lists the keeper hashes of every dependency oath that ran during swearing, so oath who can say which insert the evidence for sort was gathered against.
+- [ ] the sworn record lists dependency keeper hashes used during swearing

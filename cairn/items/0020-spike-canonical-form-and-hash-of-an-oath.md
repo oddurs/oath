@@ -38,3 +38,7 @@ _(fill in before closing; a spike without an answer was wasted)_
 ## 2026-09-16
 
 Question to answer explicitly: do examples participate in the hash? If yes (current plan), adding one example creates a new identity and hash importers stay on the old promise until they opt in; that is Unison's semantics and it is principled, since the importer tested against exactly that promise. If no, identity is type plus laws and examples are evidence that only invalidates sworn records. Lean: yes, examples are part of the promise; path imports exist for those who want to follow changes.
+
+## 2026-09-16
+
+From Unison (docs/research/01): the canonical form substitutes every dependency by its hash, so the spike must define the dependency set of an oath: user types in the signature, oaths referenced in laws and examples. Keepers substitute the oaths they call by oath hash, never by keeper hash.

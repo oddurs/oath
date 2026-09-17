@@ -23,3 +23,7 @@ An oath naming roles, written once, projected per role, with an oath-hash handsh
 ## Shape when it comes
 
 parse roles → location check as a syntactic pass during projection → `oath project` → in-process transport → hash handshake → TCP on localhost → swear role oaths in-process → deadlock-freedom test over every example.
+
+## 2026-09-16
+
+Risk (docs/research/04): rollback across roles is a saga and inherits its missing isolation; the cross-role spike question must include it.
