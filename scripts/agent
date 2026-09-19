@@ -1,0 +1,233 @@
+#!/bin/sh
+# The workflow: one unit of work, one worktree, one branch, one pull request.
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+repo=$(basename "$root")
+worktrees="$(dirname "$root")/.worktrees/$repo"
+types='feat fix chore docs perf refactor test'
+
+usage() {
+	cat <<'USAGE'
+usage: scripts/agent <command> [args]
+
+  doctor              is this checkout ready to work in
+  start <type>/<slug> a branch and a worktree of its own
+  check               scripts/task check
+  commit <message>    validate the message, then commit
+  pr [--draft]        check, push, open the pull request
+  sync                rebase onto the default branch
+  done [branch]       confirm merged, remove the worktree and branch
+  list                worktrees, branches, pull request state
+
+Branch names are <type>/<slug>, type one of: feat fix chore docs perf refactor test.
+When the repo has a tracker the id leads: fix/0041-attach-to-a-terminal.
+USAGE
+}
+
+die() {
+	printf 'scripts/agent: %s\n' "$*" >&2
+	exit 1
+}
+
+say() { printf '==> %s\n' "$*"; }
+
+# The default branch, from the remote when there is one.
+base_branch() {
+	b=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || true)
+	b=${b#origin/}
+	if [ -z "$b" ]; then
+		b=$(git config --get init.defaultBranch 2>/dev/null || echo main)
+	fi
+	printf '%s' "$b"
+}
+
+has_remote() { git remote | grep -q .; }
+
+# origin/<base> when it exists, else the local branch.
+base_ref() {
+	b=$(base_branch)
+	if git rev-parse --verify --quiet "refs/remotes/origin/$b" >/dev/null; then
+		printf 'origin/%s' "$b"
+	else
+		printf '%s' "$b"
+	fi
+}
+
+check_branch_name() {
+	name=$1
+	type=${name%%/*}
+	slug=${name#*/}
+	[ "$type" != "$name" ] || die "branch must be <type>/<slug>, got: $name"
+	[ -n "$slug" ] || die "branch must be <type>/<slug>, got: $name"
+	for t in $types; do
+		[ "$t" = "$type" ] && return 0
+	done
+	die "type must be one of: $types"
+}
+
+# Conventional Commits, subject no longer than 72 characters, no full stop.
+check_message() {
+	subject=$(printf '%s' "$1" | head -n 1)
+	case "$subject" in
+	"Merge "* | "Revert "* | "fixup!"* | "squash!"*) return 0 ;;
+	esac
+	printf '%s' "$subject" |
+		grep -Eq '^(feat|fix|chore|docs|perf|refactor|test|build|ci)(\([a-z0-9._/-]+\))?!?: .+' ||
+		die "subject must be Conventional Commits: <type>(<scope>)?: <imperative subject>
+  got: $subject"
+	[ "${#subject}" -le 72 ] ||
+		die "subject is ${#subject} characters, the limit is 72:
+  $subject"
+	case "$subject" in
+	*.) die "subject must not end in a full stop:
+  $subject" ;;
+	esac
+}
+
+cmd_doctor() {
+	ok=0
+	say "repository $root"
+
+	hooks=$(git config --get core.hooksPath 2>/dev/null || true)
+	if [ "$hooks" = ".githooks" ]; then
+		say "hooks: .githooks"
+	else
+		printf '  hooks are not installed; run: git config core.hooksPath .githooks\n' >&2
+		ok=1
+	fi
+
+	if has_remote; then
+		say "remote: $(git remote get-url origin 2>/dev/null || echo 'none named origin')"
+	else
+		printf '  no remote; `pr` and `done` need one\n' >&2
+		ok=1
+	fi
+
+	say "default branch: $(base_branch)"
+	say "on branch: $(git rev-parse --abbrev-ref HEAD)"
+
+	if [ -n "$(git status --porcelain)" ]; then
+		say "working tree: dirty"
+	else
+		say "working tree: clean"
+	fi
+
+	for tool in cargo git; do
+		command -v "$tool" >/dev/null 2>&1 || {
+			printf '  missing tool: %s\n' "$tool" >&2
+			ok=1
+		}
+	done
+
+	[ "$ok" -eq 0 ] || die "not ready; fix the lines above"
+	say "ready"
+}
+
+cmd_start() {
+	[ $# -eq 1 ] || die "usage: scripts/agent start <type>/<slug>"
+	branch=$1
+	check_branch_name "$branch"
+	dir="$worktrees/$branch"
+
+	[ -e "$dir" ] && die "worktree already exists: $dir"
+	git rev-parse --verify --quiet "refs/heads/$branch" >/dev/null &&
+		die "branch already exists: $branch (scripts/agent list)"
+
+	if has_remote; then
+		say "fetching"
+		git fetch --quiet origin
+	fi
+
+	say "worktree $dir from $(base_ref)"
+	git worktree add -b "$branch" "$dir" "$(base_ref)"
+	printf '\n%s\n' "$dir"
+}
+
+cmd_check() { "$root/scripts/task" check; }
+
+cmd_commit() {
+	[ $# -ge 1 ] || die "usage: scripts/agent commit <message>"
+	message=$*
+	check_message "$message"
+	say "committing"
+	git commit -m "$message"
+}
+
+cmd_pr() {
+	has_remote || die "no remote; add one before opening a pull request"
+	command -v gh >/dev/null 2>&1 || die "gh is not installed"
+	branch=$(git rev-parse --abbrev-ref HEAD)
+	[ "$branch" != "$(base_branch)" ] || die "refusing to open a pull request from the default branch"
+
+	cmd_check
+	say "pushing $branch"
+	git push --set-upstream origin "$branch"
+	say "opening the pull request"
+	gh pr create --base "$(base_branch)" --fill "$@"
+}
+
+cmd_sync() {
+	if has_remote; then
+		say "fetching"
+		git fetch --quiet origin
+	fi
+	say "rebasing onto $(base_ref)"
+	git rebase "$(base_ref)"
+}
+
+cmd_done() {
+	branch=${1-$(git rev-parse --abbrev-ref HEAD)}
+	has_remote || die "no remote; cannot confirm $branch was merged"
+	command -v gh >/dev/null 2>&1 || die "gh is not installed"
+
+	state=$(gh pr view "$branch" --json state --jq .state 2>/dev/null || true)
+	[ "$state" = "MERGED" ] || die "pull request for $branch is ${state:-missing}, not MERGED"
+
+	dir="$worktrees/$branch"
+	if [ -e "$dir" ]; then
+		say "removing worktree $dir"
+		git -C "$root" worktree remove "$dir"
+	fi
+	say "deleting branch $branch"
+	git -C "$root" branch -d "$branch"
+	git -C "$root" worktree prune
+	git -C "$root" fetch --prune --quiet origin
+	say "done"
+}
+
+cmd_list() {
+	say "worktrees"
+	git worktree list
+	printf '\n'
+	say "branches"
+	git branch -vv
+	if has_remote && command -v gh >/dev/null 2>&1; then
+		printf '\n'
+		say "pull requests"
+		gh pr list --state open || true
+	fi
+}
+
+command=${1-}
+[ $# -gt 0 ] && shift || true
+case "$command" in
+doctor) cmd_doctor "$@" ;;
+start) cmd_start "$@" ;;
+check) cmd_check "$@" ;;
+commit) cmd_commit "$@" ;;
+pr) cmd_pr "$@" ;;
+sync) cmd_sync "$@" ;;
+done) cmd_done "$@" ;;
+list) cmd_list "$@" ;;
+-h | --help | help) usage ;;
+'')
+	usage >&2
+	exit 2
+	;;
+*)
+	printf 'scripts/agent: no such command: %s\n\n' "$command" >&2
+	usage >&2
+	exit 2
+	;;
+esac

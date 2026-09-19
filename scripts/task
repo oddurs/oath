@@ -1,0 +1,61 @@
+#!/bin/sh
+# The seam. CI and the git hooks know only these verbs, so they cannot drift
+# from what a person runs locally.
+set -eu
+
+usage() {
+	cat <<'USAGE'
+usage: scripts/task <verb>
+
+  fmt         format the source in place
+  fmt:check   fail if the source is not formatted
+  lint        clippy over every target, warnings denied
+  test        the full suite
+  build       debug build
+  check       fmt:check, then lint, test, build
+
+Every verb is safe to run twice.
+USAGE
+}
+
+run() {
+	printf '==> %s\n' "$*"
+	"$@"
+}
+
+case "${1-}" in
+fmt)
+	run cargo fmt --all
+	;;
+fmt:check)
+	run cargo fmt --all -- --check
+	;;
+lint)
+	run cargo clippy --all-targets --all-features -- -D warnings
+	;;
+test)
+	run cargo test --all-features
+	;;
+build)
+	run cargo build
+	;;
+check)
+	"$0" fmt:check
+	"$0" lint
+	"$0" test
+	"$0" build
+	printf '\n==> check: green\n'
+	;;
+-h | --help | help)
+	usage
+	;;
+'')
+	usage >&2
+	exit 2
+	;;
+*)
+	printf 'scripts/task: no such verb: %s\n\n' "$1" >&2
+	usage >&2
+	exit 2
+	;;
+esac

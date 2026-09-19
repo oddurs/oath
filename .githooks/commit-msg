@@ -1,0 +1,28 @@
+#!/bin/sh
+# Conventional Commits. The subject is imperative, at most 72 characters, and
+# does not end in a full stop.
+set -eu
+
+file=$1
+subject=$(head -n 1 "$file")
+
+case "$subject" in
+"Merge "* | "Revert "* | "fixup!"* | "squash!"* | "#"*) exit 0 ;;
+esac
+
+fail() {
+	printf 'commit-msg: %s\n\n  %s\n\n' "$1" "$subject" >&2
+	printf 'expected: <type>(<scope>)?: <imperative subject>\n' >&2
+	printf 'types:    feat fix chore docs perf refactor test build ci\n' >&2
+	exit 1
+}
+
+printf '%s' "$subject" |
+	grep -Eq '^(feat|fix|chore|docs|perf|refactor|test|build|ci)(\([a-z0-9._/-]+\))?!?: .+' ||
+	fail "subject is not a Conventional Commit"
+
+[ "${#subject}" -le 72 ] || fail "subject is ${#subject} characters, the limit is 72"
+
+case "$subject" in
+*.) fail "subject must not end in a full stop" ;;
+esac

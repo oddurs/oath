@@ -1,0 +1,4 @@
+/target
+
+# .oath/store is deliberately absent: the sworn records are the evidence and
+# belong in the repository, the way a lockfile does. See docs/design.md.

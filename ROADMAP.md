@@ -4,13 +4,12 @@
 
 ## v0.1 — v0.1
 
-`··········` 0% · 0 of 20 done · due 2026-10-31
+`#·········` 5% · 1 of 20 done · due 2026-10-31
 
 `oath run hello.oath` runs a pure program. `oath swear hello.oath` checks every keeper against its oath's examples, records the verdict in a store keyed by the oath's hash, and prints it. Every call site resolves through the oath to a sworn keeper. Editing an oath un-swears its keepers, visibly. That last line is the idea, and it is in v0.1 so a stranger feels it on day one.
 
 ### planned
 
-- [ ] `0007` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
 - [ ] `0008` CI runs scripts/task check on macOS and Linux <sup>chore · p0 · infra</sup>
 - [ ] `0009` Golden-file harness for .oath programs <sup>chore · p0 · infra</sup>
 - [ ] `0010` Lexer with source spans <sup>feature · p0 · syntax</sup>
@@ -30,6 +29,10 @@
 - [ ] `0041` Keeper store on disk with sworn records <sup>feature · p0 · oath</sup>
 - [ ] `0042` Oath change un-swears its keepers visibly <sup>feature · p0 · oath</sup>
 - [ ] `0096` Runtime contract check at the oath boundary <sup>feature · p0 · oath</sup>
+
+### done
+
+- [x] `0007` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
 
 ## v0.2 — v0.2
 

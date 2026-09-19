@@ -1,0 +1,20 @@
+[package]
+name = "oath-lang"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98"
+description = "A language where every call resolves to a body sworn against a hashed contract"
+license = "MIT"
+
+# One crate. A split earns its place when compile times demand it. Modules
+# arrive with the work that needs them: syntax with the lexer, eval with the
+# evaluator, oath with hashing and the store.
+[[bin]]
+name = "oath"
+path = "src/main.rs"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }

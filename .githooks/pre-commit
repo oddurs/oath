@@ -1,0 +1,10 @@
+#!/bin/sh
+# Green before it becomes a commit. This checks the working tree, not the index,
+# so commit what you have tested.
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+[ -x "$root/scripts/task" ] || exit 0
+
+printf 'pre-commit: scripts/task check\n'
+"$root/scripts/task" check
