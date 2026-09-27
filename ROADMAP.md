@@ -4,7 +4,7 @@
 
 ## v0.1 — v0.1
 
-`###·······` 25% · 7 of 28 done · due 2026-10-31
+`###·······` 29% · 8 of 28 done · due 2026-10-31
 
 `oath run hello.oath` runs a pure program. `oath swear hello.oath` checks every keeper against its oath's examples, records the verdict in a store keyed by the oath's hash, and prints it. Every call site resolves through the oath to a sworn keeper. Editing an oath un-swears its keepers, visibly. That last line is the idea, and it is in v0.1 so a stranger feels it on day one.
 
@@ -24,7 +24,6 @@
 - [ ] `6da39fe2` Repository templates and hygiene files <sup>chore · p1 · infra</sup>
 - [ ] `73ab165c` Keeper identity: hash of the body <sup>feature · p0 · oath</sup>
 - [ ] `7523f3ee` Golden-file harness for .oath programs <sup>chore · p0 · infra</sup>
-- [ ] `7ac5641a` Lexer with source spans <sup>feature · p0 · syntax</sup>
 - [ ] `87232d9d` Release workflow on a version tag <sup>chore · p2 · infra</sup>
 - [ ] `885a142e` Runtime contract check at the oath boundary <sup>feature · p0 · oath</sup>
 - [ ] `b878db8a` CI runs scripts/task check on macOS and Linux <sup>chore · p0 · infra</sup>
@@ -36,6 +35,7 @@
 
 - [x] `19e43dee` pre-push hook refuses a push to the default branch <sup>chore · p0 · infra</sup>
 - [x] `1e5cca1f` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
+- [x] `7ac5641a` Lexer with source spans <sup>feature · p0 · syntax</sup>
 - [x] `90e139dc` Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security <sup>docs · p0 · docs</sup>
 - [x] `9ef6fdb5` Prove the whole loop end to end once <sup>chore · p0 · infra</sup>
 - [x] `c362d83c` Publish the repository and enforce the workflow on the server <sup>chore · p0 · infra</sup>
