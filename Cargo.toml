@@ -5,6 +5,7 @@ edition = "2024"
 rust-version = "1.98"
 description = "A language where every call resolves to a body sworn against a hashed contract"
 license = "MIT"
+repository = "https://github.com/oddurs/oath"
 
 # One crate. A split earns its place when compile times demand it. Modules
 # arrive with the work that needs them: syntax with the lexer, eval with the
