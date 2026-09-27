@@ -1,11 +1,11 @@
 ---
-id: 21
+id: 5d43d6fa-435e-436f-b8b9-262f3891e383
 title: Canonicalise and hash oaths; oath hash subcommand
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 20
+- 29db0670-bf25-4bb0-b075-f466a9570f91
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

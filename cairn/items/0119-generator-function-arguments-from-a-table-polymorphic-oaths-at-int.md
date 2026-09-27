@@ -1,11 +1,11 @@
 ---
-id: 119
+id: 470bab2e-32de-400e-804c-68b1d16ce8d6
 title: 'Generator: function arguments from a table, polymorphic oaths at Int'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 38
+- 908186e3-49b5-49ee-bb45-d7f5efe3187e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1

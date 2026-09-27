@@ -1,13 +1,13 @@
 ---
-id: 53
+id: f84f6083-ba76-4381-bd94-ad1db39522af
 title: Reaching a hole raises the Keep effect
 type: feature
 status: backlog
 milestone: v0.3
 depends_on:
-- 23
-- 37
-- 99
+- 00b844e9-f272-448c-aa30-2d4595d7b3df
+- 2127e390-7dba-42c3-a471-d1cb327d0737
+- 7f9eae9c-21d2-4660-b008-f807c1a79f04
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

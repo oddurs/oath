@@ -1,12 +1,12 @@
 ---
-id: 54
+id: bb9fda78-12fe-4dfb-8d38-9a509b8b0f05
 title: 'Keeper source: pause into a REPL'
 type: feature
 status: backlog
 milestone: v0.3
 depends_on:
-- 51
-- 53
+- ca1c532d-8707-4a3c-ad89-bddcd1dcdd2f
+- f84f6083-ba76-4381-bd94-ad1db39522af
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

@@ -1,11 +1,11 @@
 ---
-id: 80
+id: 5182643a-7c06-44ba-a167-77bfe0f62c7a
 title: Fuzz parser and canonicaliser
 type: chore
 status: backlog
 milestone: v1.0
 depends_on:
-- 51
+- ca1c532d-8707-4a3c-ad89-bddcd1dcdd2f
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1

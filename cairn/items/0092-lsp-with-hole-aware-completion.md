@@ -1,5 +1,5 @@
 ---
-id: 92
+id: ff850006-2a70-49ae-9925-d1d3e7b0da7e
 title: LSP with hole-aware completion
 type: feature
 status: backlog

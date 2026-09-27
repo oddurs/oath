@@ -1,13 +1,13 @@
 ---
-id: 24
+id: 4950905e-b874-422e-b613-61ab15297f2e
 title: 'oath binary: run, swear, hash, --help'
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 14
-- 18
-- 22
+- 1c5423ff-b3cb-4bc2-b16c-188246cad23f
+- 37875bb2-b37c-4093-9ed7-3d0e723277e8
+- 077ae825-1ca6-45c7-af09-fb4c147bad02
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

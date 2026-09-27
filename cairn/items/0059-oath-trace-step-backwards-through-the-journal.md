@@ -1,12 +1,12 @@
 ---
-id: 59
+id: 2b1692b6-bbfb-45df-a5ed-14a189c3b856
 title: 'oath trace: step backwards through the journal'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 28
-- 35
+- 01a26824-a3d2-43b7-b8b1-575b0c15a7c9
+- 7f1da788-89c6-4077-9b8e-09f84800c143
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1

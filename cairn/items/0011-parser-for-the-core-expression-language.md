@@ -1,11 +1,11 @@
 ---
-id: 11
+id: 45551b47-c978-4bd3-bc2c-a262d9451c24
 title: Parser for the core expression language
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 10
+- 7ac5641a-b839-4707-a40a-58f3744eb3b6
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

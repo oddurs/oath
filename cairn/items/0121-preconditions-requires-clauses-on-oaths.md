@@ -1,13 +1,13 @@
 ---
-id: 121
+id: 4e904923-2eb3-4753-b3e6-fa3d9c2ad42d
 title: 'Preconditions: requires clauses on oaths'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 27
-- 38
-- 96
+- 437b3e57-8a55-42f9-a262-58c58155f48d
+- 908186e3-49b5-49ee-bb45-d7f5efe3187e
+- 885a142e-3c55-4336-94d5-993c8099aec8
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

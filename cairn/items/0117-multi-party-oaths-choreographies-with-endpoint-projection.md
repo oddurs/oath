@@ -1,5 +1,5 @@
 ---
-id: 117
+id: 9330d99e-a3f7-430a-a8cf-8aa640c6efe0
 title: 'Multi-party oaths: choreographies with endpoint projection'
 type: feature
 status: backlog

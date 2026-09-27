@@ -1,11 +1,11 @@
 ---
-id: 36
+id: 3cb4f026-cd20-453e-8663-54a249fc36fb
 title: try/else rolls back to the block entry
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 35
+- 7f1da788-89c6-4077-9b8e-09f84800c143
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

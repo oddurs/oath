@@ -1,11 +1,11 @@
 ---
-id: 20
+id: 29db0670-bf25-4bb0-b075-f466a9570f91
 title: 'Spike: canonical form and hash of an oath'
 type: spike
 status: planned
 milestone: v0.1
 depends_on:
-- 12
+- d69d21e3-49ea-40c2-bdb6-98d792a09e6b
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

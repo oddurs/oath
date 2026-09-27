@@ -1,14 +1,14 @@
 ---
-id: 39
+id: e29e8d64-cba1-44f8-bd19-168b0cc88bb9
 title: Laws checked during swearing with smallest counterexample
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 22
-- 38
-- 97
-- 121
+- 077ae825-1ca6-45c7-af09-fb4c147bad02
+- 908186e3-49b5-49ee-bb45-d7f5efe3187e
+- 2d1cc97f-2183-4421-abbb-7a1bfce2ab0b
+- 4e904923-2eb3-4753-b3e6-fa3d9c2ad42d
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

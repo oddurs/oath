@@ -1,11 +1,11 @@
 ---
-id: 35
+id: 7f1da788-89c6-4077-9b8e-09f84800c143
 title: Automatic undo journal of cell writes
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 97
+- 2d1cc97f-2183-4421-abbb-7a1bfce2ab0b
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

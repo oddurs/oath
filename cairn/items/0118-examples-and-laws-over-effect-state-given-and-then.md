@@ -1,12 +1,12 @@
 ---
-id: 118
+id: 5037e1bb-34f0-4bb9-9ae8-5bd9871d7e0f
 title: 'Examples and laws over effect state: given and then'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 35
-- 39
+- 7f1da788-89c6-4077-9b8e-09f84800c143
+- e29e8d64-cba1-44f8-bd19-168b0cc88bb9
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

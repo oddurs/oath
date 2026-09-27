@@ -1,11 +1,11 @@
 ---
-id: 12
+id: d69d21e3-49ea-40c2-bdb6-98d792a09e6b
 title: Parse oath declarations with signature and examples
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 11
+- 45551b47-c978-4bd3-bc2c-a262d9451c24
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

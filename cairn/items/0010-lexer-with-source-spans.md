@@ -1,11 +1,11 @@
 ---
-id: 10
+id: 7ac5641a-b839-4707-a40a-58f3744eb3b6
 title: Lexer with source spans
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 7
+- 1e5cca1f-d115-4609-bbe6-ea9f72440be0
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

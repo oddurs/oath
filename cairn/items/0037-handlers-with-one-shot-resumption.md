@@ -1,11 +1,11 @@
 ---
-id: 37
+id: 2127e390-7dba-42c3-a471-d1cb327d0737
 title: Handlers with one-shot resumption
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 35
+- 7f1da788-89c6-4077-9b8e-09f84800c143
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

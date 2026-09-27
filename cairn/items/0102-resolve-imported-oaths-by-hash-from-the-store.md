@@ -1,12 +1,12 @@
 ---
-id: 102
+id: f61ea3f6-fc28-47ba-8439-d12a67494c5e
 title: Resolve imported oaths by hash from the store
 type: feature
 status: backlog
 milestone: v0.4
 depends_on:
-- 41
-- 101
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
+- 82e2c71c-8669-4079-978b-f0e97a90664e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

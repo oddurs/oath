@@ -1,11 +1,11 @@
 ---
-id: 79
+id: 77339e8e-2cc0-4970-963f-5688387173b4
 title: Error message audit
 type: chore
 status: backlog
 milestone: v1.0
 depends_on:
-- 75
+- 258b99b1-54df-427e-a389-6a11af504ad6
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

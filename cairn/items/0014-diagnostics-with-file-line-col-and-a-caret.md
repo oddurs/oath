@@ -1,11 +1,11 @@
 ---
-id: 14
+id: 1c5423ff-b3cb-4bc2-b16c-188246cad23f
 title: Diagnostics with file:line:col and a caret
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 10
+- 7ac5641a-b839-4707-a40a-58f3744eb3b6
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

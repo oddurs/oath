@@ -1,12 +1,12 @@
 ---
-id: 41
+id: 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 title: Keeper store on disk with sworn records
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 22
-- 40
+- 077ae825-1ca6-45c7-af09-fb4c147bad02
+- 73ab165c-be8f-461f-ac76-e03220dc8218
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

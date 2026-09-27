@@ -1,11 +1,11 @@
 ---
-id: 115
+id: 6a1a4c4b-c521-4f16-8903-6474ae466121
 title: Expression-level holes
 type: feature
 status: backlog
 milestone: later
 depends_on:
-- 114
+- a01977dc-1301-42cc-ac17-89a497e4defe
 created: 2026-09-16
 updated: 2026-09-16
 priority: p2

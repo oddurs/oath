@@ -1,13 +1,13 @@
 ---
-id: 57
+id: 03dcafbc-be06-42ed-9376-ed140e18c4d7
 title: 'Keeper source: external command'
 type: feature
 status: backlog
 milestone: v0.3
 depends_on:
-- 51
-- 53
-- 56
+- ca1c532d-8707-4a3c-ad89-bddcd1dcdd2f
+- f84f6083-ba76-4381-bd94-ad1db39522af
+- c35dc1a0-54d3-461a-93c6-af1faacb740e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

@@ -1,12 +1,12 @@
 ---
-id: 23
+id: 00b844e9-f272-448c-aa30-2d4595d7b3df
 title: Call sites resolve through the oath to a sworn keeper
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 22
-- 41
+- 077ae825-1ca6-45c7-af09-fb4c147bad02
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

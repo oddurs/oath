@@ -1,12 +1,12 @@
 ---
-id: 78
+id: f2ae4108-fa38-4a68-b31e-06e5a8361e27
 title: Pin golden hashes for the examples
 type: chore
 status: backlog
 milestone: v1.0
 depends_on:
-- 21
-- 29
+- 5d43d6fa-435e-436f-b8b9-262f3891e383
+- e79e4682-c8e2-45db-8f45-8f2b05c490d0
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

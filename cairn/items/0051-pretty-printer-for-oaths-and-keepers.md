@@ -1,12 +1,12 @@
 ---
-id: 51
+id: ca1c532d-8707-4a3c-ad89-bddcd1dcdd2f
 title: Pretty-printer for oaths and keepers
 type: feature
 status: backlog
 milestone: v0.3
 depends_on:
-- 21
-- 27
+- 5d43d6fa-435e-436f-b8b9-262f3891e383
+- 437b3e57-8a55-42f9-a262-58c58155f48d
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

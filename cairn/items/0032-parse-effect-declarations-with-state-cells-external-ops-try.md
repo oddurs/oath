@@ -1,11 +1,11 @@
 ---
-id: 32
+id: 0d5c6a89-6668-48d4-a6ed-4ee0671c7d31
 title: Parse effect declarations with state cells, external ops, try
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 11
+- 45551b47-c978-4bd3-bc2c-a262d9451c24
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

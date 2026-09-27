@@ -1,12 +1,12 @@
 ---
-id: 97
+id: 2d1cc97f-2183-4421-abbb-7a1bfce2ab0b
 title: Structural checks for effects and laws
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 27
-- 32
+- 437b3e57-8a55-42f9-a262-58c58155f48d
+- 0d5c6a89-6668-48d4-a6ed-4ee0671c7d31
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

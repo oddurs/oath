@@ -1,11 +1,11 @@
 ---
-id: 108
+id: 0ef2a5d2-b1b1-4048-bd83-824b8b44f24d
 title: 'oath pack / unpack: hand a store bundle to someone'
 type: feature
 status: backlog
 milestone: v0.4
 depends_on:
-- 102
+- f61ea3f6-fc28-47ba-8439-d12a67494c5e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p2

@@ -1,11 +1,11 @@
 ---
-id: 100
+id: b1f23c1d-b2bf-4bc6-bf19-08dc000fd28f
 title: 'Spike: module identity and where the store lives'
 type: spike
 status: backlog
 milestone: v0.4
 depends_on:
-- 41
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

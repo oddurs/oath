@@ -1,12 +1,12 @@
 ---
-id: 103
+id: c333a4b2-1611-40cc-b6ac-65f1d2ccb7ae
 title: Import oaths from another file by path
 type: feature
 status: backlog
 milestone: v0.4
 depends_on:
-- 101
-- 102
+- 82e2c71c-8669-4079-978b-f0e97a90664e
+- f61ea3f6-fc28-47ba-8439-d12a67494c5e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

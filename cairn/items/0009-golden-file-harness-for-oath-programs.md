@@ -1,11 +1,11 @@
 ---
-id: 9
+id: 7523f3ee-4360-4adf-bcf1-8c79cf9e2a37
 title: Golden-file harness for .oath programs
 type: chore
 status: planned
 milestone: v0.1
 depends_on:
-- 7
+- 1e5cca1f-d115-4609-bbe6-ea9f72440be0
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

@@ -1,12 +1,12 @@
 ---
-id: 40
+id: 73ab165c-be8f-461f-ac76-e03220dc8218
 title: 'Keeper identity: hash of the body'
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 13
-- 21
+- d9310c65-7ebb-40db-8ed0-41a5c7ecb153
+- 5d43d6fa-435e-436f-b8b9-262f3891e383
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

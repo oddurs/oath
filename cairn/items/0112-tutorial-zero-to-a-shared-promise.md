@@ -1,11 +1,11 @@
 ---
-id: 112
+id: 92d3a341-b6e8-414e-afaa-4f391ac16e8b
 title: 'Tutorial: zero to a shared promise'
 type: docs
 status: backlog
 milestone: v1.0
 depends_on:
-- 75
+- 258b99b1-54df-427e-a389-6a11af504ad6
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

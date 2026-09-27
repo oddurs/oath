@@ -1,11 +1,11 @@
 ---
-id: 42
+id: 55fcecb3-5ef2-46d1-a952-7139eb533e58
 title: Oath change un-swears its keepers visibly
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 41
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

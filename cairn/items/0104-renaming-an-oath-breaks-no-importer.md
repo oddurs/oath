@@ -1,11 +1,11 @@
 ---
-id: 104
+id: dcb3d53d-4237-44b5-8e45-9447cb609494
 title: Renaming an oath breaks no importer
 type: feature
 status: backlog
 milestone: v0.4
 depends_on:
-- 102
+- f61ea3f6-fc28-47ba-8439-d12a67494c5e
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

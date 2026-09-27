@@ -1,11 +1,11 @@
 ---
-id: 101
+id: 82e2c71c-8669-4079-978b-f0e97a90664e
 title: Parse use declarations
 type: feature
 status: backlog
 milestone: v0.4
 depends_on:
-- 100
+- b1f23c1d-b2bf-4bc6-bf19-08dc000fd28f
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

@@ -1,13 +1,13 @@
 ---
-id: 22
+id: 077ae825-1ca6-45c7-af09-fb4c147bad02
 title: Swearing by examples; oath swear subcommand
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 18
-- 21
-- 96
+- 37875bb2-b37c-4093-9ed7-3d0e723277e8
+- 5d43d6fa-435e-436f-b8b9-262f3891e383
+- 885a142e-3c55-4336-94d5-993c8099aec8
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

@@ -1,11 +1,11 @@
 ---
-id: 43
+id: aefffbd4-8de0-4a89-a72b-2d7462480322
 title: 'oath who: provenance per keeper'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 41
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1

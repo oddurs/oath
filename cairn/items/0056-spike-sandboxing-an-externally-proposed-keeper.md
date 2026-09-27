@@ -1,11 +1,11 @@
 ---
-id: 56
+id: c35dc1a0-54d3-461a-93c6-af1faacb740e
 title: 'Spike: sandboxing an externally proposed keeper'
 type: spike
 status: backlog
 milestone: v0.3
 depends_on:
-- 46
+- d51033b2-f681-491e-a99c-5ff3acebc8da
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

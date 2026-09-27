@@ -1,12 +1,12 @@
 ---
-id: 98
+id: 391c86fa-08b4-4623-956e-913bdc6f6971
 title: 'Keeper selection: source order, then stored-only keepers; --prefer overrides'
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 23
-- 41
+- 00b844e9-f272-448c-aa30-2d4595d7b3df
+- 35a4f75b-4dea-4681-b3c1-927cdd162ff4
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1

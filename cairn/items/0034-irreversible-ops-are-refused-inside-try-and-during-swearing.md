@@ -1,11 +1,11 @@
 ---
-id: 34
+id: a3a03c1d-43b6-4883-807f-2853d3d4cc24
 title: Irreversible ops are refused inside try and during swearing
 type: feature
 status: backlog
 milestone: v0.2
 depends_on:
-- 97
+- 2d1cc97f-2183-4421-abbb-7a1bfce2ab0b
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

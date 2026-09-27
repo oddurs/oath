@@ -1,12 +1,12 @@
 ---
-id: 96
+id: 885a142e-3c55-4336-94d5-993c8099aec8
 title: Runtime contract check at the oath boundary
 type: feature
 status: planned
 milestone: v0.1
 depends_on:
-- 12
-- 18
+- d69d21e3-49ea-40c2-bdb6-98d792a09e6b
+- 37875bb2-b37c-4093-9ed7-3d0e723277e8
 created: 2026-09-16
 updated: 2026-09-16
 priority: p0

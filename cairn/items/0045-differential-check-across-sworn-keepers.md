@@ -1,11 +1,11 @@
 ---
-id: 45
+id: cba18afe-2c26-4870-b327-30241e2add68
 title: Differential check across sworn keepers
 type: feature
 status: backlog
 milestone: v0.3
 depends_on:
-- 39
+- e29e8d64-cba1-44f8-bd19-168b0cc88bb9
 created: 2026-09-16
 updated: 2026-09-16
 priority: p1
