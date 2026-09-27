@@ -15,6 +15,14 @@ fi
 # git feeds us "<local ref> <local sha> <remote ref> <remote sha>" per ref.
 while read -r _local_ref _local_sha remote_ref _remote_sha; do
 	[ -n "$remote_ref" ] || continue
+	# An all-zero remote sha means the ref does not exist yet: this push
+	# creates it. Publishing the default branch for the first time is not an
+	# end-run around review, so allow it; every later push is refused.
+	case "$_remote_sha" in
+	*[!0]*) ;;
+	*) continue ;;
+	esac
+
 	case "$remote_ref" in
 	"refs/heads/$default")
 		printf 'pre-push: refusing to push straight to %s\n\n' "$default" >&2
