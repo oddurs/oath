@@ -19,10 +19,22 @@ A stranger's first experience of Oath will be an error message.
 
 ## Proposal
 
-One `Diagnostic { span, message, hint: Option<String> }` type shared by lexer, parser, checker and evaluator. Renderer prints `file:line:col: message`, the source line, and a caret under the span. Parse and type errors exit 2; runtime errors exit 1.
+One `Diagnostic { span, message, hint: Option<String> }` type shared by every stage. The renderer prints `file:line:col: message`, the source line, and a caret under the span:
+
+```
+sort.oath:2:14: unterminated string at the end of the line
+  |
+2 | keep sort by "fast
+  |              ^^^^^
+  = help: add a closing `"`
+```
+
+Source errors exit 2; runtime errors exit 1.
 
 ## Acceptance criteria
 
-- [ ] golden test for a parse error, a type error and a runtime error, each with the caret on the right column
-- [ ] no `panic!`/`unwrap` on user input anywhere in the binary (grep in CI)
-- [ ] exit codes documented in `oath --help`
+- [ ] the caret lands on the right column, with snapshot tests covering a plain line, a wide span, a tab-indented line, a multibyte line, an empty span, an offset past the last newline, a span crossing lines, and a two-digit line number
+- [ ] rendering cannot panic whatever span it is handed, including one that splits a character, proved by rendering every offset pair over a set of sources
+- [ ] a real lexer error renders end to end through the same path
+- [ ] `unwrap`, `panic!`, `todo!`, `unimplemented!` and `dbg!` are refused outside test modules, enforced by `scripts/task lint` and therefore by CI
+- [ ] exit codes are documented in `oath --help` and pinned by a test

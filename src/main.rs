@@ -53,6 +53,8 @@ fn main() -> ExitCode {
 
 #[cfg(test)]
 mod tests {
+    #![allow(clippy::unwrap_used, clippy::panic)]
+
     use super::*;
 
     fn dispatch_of(args: &[&str]) -> Response {
@@ -78,6 +80,19 @@ mod tests {
     #[test]
     fn no_arguments_is_a_usage_error() {
         assert_eq!(dispatch_of(&[]), Response::Complain(USAGE.to_string(), 2));
+    }
+
+    #[test]
+    fn usage_documents_the_exit_codes_it_uses() {
+        // The codes are an interface: a script branching on them should be able
+        // to read them from `--help` rather than from the source.
+        for line in ["0 success", "1 runtime error", "2 usage or source error"] {
+            assert!(USAGE.contains(line), "usage should document {line:?}");
+        }
+        let Response::Complain(_, code) = dispatch_of(&[]) else {
+            panic!("no arguments is a usage error");
+        };
+        assert_eq!(code, 2, "and the code it documents is the one it returns");
     }
 
     #[test]
