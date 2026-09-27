@@ -2,7 +2,7 @@
 id: 90e139dc-d2c2-4f83-85ac-82b859d459d1
 title: 'Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security'
 type: docs
-status: planned
+status: done
 milestone: v0.1
 created: 2026-09-26
 updated: 2026-09-26

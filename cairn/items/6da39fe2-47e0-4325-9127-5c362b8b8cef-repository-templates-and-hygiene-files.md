@@ -29,3 +29,11 @@ Issues and pull requests arrive shapeless without a template, and editors disagr
 - [ ] opening a pull request pre-fills the template
 - [ ] the issue forms render as forms on GitHub, and blank issues are refused
 - [x] `.editorconfig` does not contradict `cargo fmt` on any file in the repository
+
+## 2026-09-26
+
+Files are written and land with the bootstrap. Two criteria were not watched passing, so this stays open:
+
+The pull request template is not exercised by `scripts/agent pr`, which uses `gh pr create --fill` and therefore takes the body from the commit message. That is the better source for this workflow, since the commit body already explains why, but it means the template only serves pull requests opened through the web. Decide whether the script should pass `--body-file` and lose the commit detail, or the criterion should say the template is for web pull requests.
+
+The issue forms have been parsed as valid YAML in the location GitHub reads, but nobody has opened an issue to see them render. That needs a person with a browser.

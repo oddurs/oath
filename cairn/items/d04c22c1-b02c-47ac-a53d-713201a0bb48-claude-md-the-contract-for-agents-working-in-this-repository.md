@@ -2,7 +2,7 @@
 id: d04c22c1-b02c-47ac-a53d-713201a0bb48
 title: 'CLAUDE.md: the contract for agents working in this repository'
 type: docs
-status: planned
+status: done
 milestone: v0.1
 created: 2026-09-26
 updated: 2026-09-26
