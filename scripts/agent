@@ -150,6 +150,21 @@ cmd_commit() {
 	[ $# -ge 1 ] || die "usage: scripts/agent commit <message>"
 	message=$*
 	check_message "$message"
+
+	# git's own "no changes added to commit" buries the fix in a wall of
+	# status. Say what to do instead, and never stage on the caller's behalf:
+	# committing a file they did not choose is worse than one extra command.
+	if [ -z "$(git diff --cached --name-only)" ]; then
+		if [ -n "$(git status --porcelain)" ]; then
+			printf 'scripts/agent: nothing staged. Unstaged changes:\n\n' >&2
+			git status --short >&2
+			printf '\nStage what belongs in this commit, then run it again:\n\n' >&2
+			printf '    git add -A        # or name the files\n\n' >&2
+			exit 1
+		fi
+		die "nothing staged and nothing changed; there is nothing to commit"
+	fi
+
 	say "committing"
 	git commit -m "$message"
 }
