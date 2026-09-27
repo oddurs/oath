@@ -2,7 +2,7 @@
 id: c362d83c-6a8e-4fac-b711-5dcb9a45f6d9
 title: Publish the repository and enforce the workflow on the server
 type: chore
-status: planned
+status: done
 milestone: v0.1
 depends_on:
 - 19e43dee-07bc-438f-a397-d0460f4df7fd
@@ -33,7 +33,7 @@ Anything the token cannot do is reported with the exact command rather than skip
 
 ## Acceptance criteria
 
-- [ ] `gh repo view` shows squash-only and delete-on-merge
-- [ ] a direct push to the default branch is rejected by the server, watched and recorded
-- [ ] a pull request cannot merge until the `required` check passes
-- [ ] `gh api` confirms private vulnerability reporting is on
+- [x] `gh repo view` shows squash-only and delete-on-merge
+- [x] a direct push to the default branch is rejected by the server, watched and recorded
+- [x] a pull request cannot merge until the `required` check passes
+- [x] `gh api` confirms private vulnerability reporting is on
