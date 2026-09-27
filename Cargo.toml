@@ -19,3 +19,17 @@ unsafe_code = "forbid"
 
 [lints.clippy]
 all = { level = "deny", priority = -1 }
+
+# A panic on a user's program is a diagnostic nobody can act on, so the ways of
+# writing one are denied rather than discouraged. `expect` is left alone: with a
+# message it states an invariant, which is the sanctioned way to say why a case
+# cannot happen. Test modules allow these back in, since a failed assertion is
+# exactly how a test reports.
+unwrap_used = "deny"
+panic = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+
+[dev-dependencies]
+insta = "1.48.0"

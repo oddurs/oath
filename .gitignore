@@ -9,3 +9,7 @@
 # OS and editor cruft.
 .DS_Store
 *.swp
+
+# insta writes these while a snapshot test is failing; they are never committed.
+*.pending-snap
+*.snap.new

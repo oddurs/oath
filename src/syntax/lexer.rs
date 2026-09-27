@@ -471,6 +471,8 @@ fn is_ident_continue(c: char) -> bool {
 
 #[cfg(test)]
 mod tests {
+    #![allow(clippy::unwrap_used, clippy::panic)]
+
     use super::*;
     use std::collections::HashSet;
     use std::mem::discriminant;
