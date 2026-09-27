@@ -1,10 +1,11 @@
 #!/bin/sh
-# Green before it becomes a commit. This checks the working tree, not the index,
-# so commit what you have tested.
+# Fast gate. Formatting and lint only, so committing stays quick; the full suite
+# runs in pre-push, once, before anything leaves the machine.
 set -eu
 
 root=$(git rev-parse --show-toplevel)
 [ -x "$root/scripts/task" ] || exit 0
 
-printf 'pre-commit: scripts/task check\n'
-"$root/scripts/task" check
+printf 'pre-commit: fmt:check and lint\n'
+"$root/scripts/task" fmt:check
+"$root/scripts/task" lint

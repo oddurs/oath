@@ -25,7 +25,7 @@ A public repository without these is hostile: nobody can tell what the project i
 
 ## Acceptance criteria
 
-- [ ] every file exists with real content and no placeholder left in it
-- [ ] the README's install and run commands are copy-pasteable and were actually run
-- [ ] the README says plainly that the language does not yet execute a program
-- [ ] no email address is published anywhere in them
+- [x] every file exists with real content and no placeholder left in it
+- [x] the README's install and run commands are copy-pasteable and were actually run
+- [x] the README says plainly that the language does not yet execute a program
+- [x] no email address is published anywhere in them

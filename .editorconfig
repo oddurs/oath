@@ -1,0 +1,28 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# rustfmt's defaults, which scripts/task enforces.
+[*.rs]
+indent_style = space
+indent_size = 4
+max_line_length = 100
+
+# shfmt and the hooks use tabs, which is what POSIX sh scripts here already use.
+[{*.sh,scripts/*,.githooks/*}]
+indent_style = tab
+
+[*.{yml,yaml,json,toml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+# Generated from the backlog; do not hand-edit.
+[ROADMAP.md]
+trim_trailing_whitespace = false

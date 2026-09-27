@@ -1,0 +1,31 @@
+#!/bin/sh
+# Two jobs: never let a push reach the default branch directly, and never let a
+# red branch reach the remote. Branch protection is the real gate for the first;
+# this one just says so before the network round trip.
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+
+default=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || true)
+default=${default#origin/}
+if [ -z "$default" ]; then
+	default=$(git config --get init.defaultBranch 2>/dev/null || echo main)
+fi
+
+# git feeds us "<local ref> <local sha> <remote ref> <remote sha>" per ref.
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+	[ -n "$remote_ref" ] || continue
+	case "$remote_ref" in
+	"refs/heads/$default")
+		printf 'pre-push: refusing to push straight to %s\n\n' "$default" >&2
+		printf '  %s advances only through a merged pull request.\n' "$default" >&2
+		printf '  Move the work to a branch:\n\n' >&2
+		printf '    git branch <type>/<slug> && git reset --hard origin/%s\n\n' "$default" >&2
+		exit 1
+		;;
+	esac
+done
+
+[ -x "$root/scripts/task" ] || exit 0
+printf 'pre-push: scripts/task check\n'
+"$root/scripts/task" check

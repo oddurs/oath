@@ -1,0 +1,64 @@
+#!/bin/sh
+# Everything a fresh checkout needs that git does not clone. Safe to run twice.
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+
+say() { printf '==> %s\n' "$*"; }
+warn() { printf '    %s\n' "$*" >&2; }
+
+missing=0
+
+# Hooks. core.hooksPath is per-checkout configuration, so a clone has none.
+current=$(git config --get core.hooksPath 2>/dev/null || true)
+if [ "$current" = ".githooks" ]; then
+	say "hooks: already pointed at .githooks"
+else
+	git config core.hooksPath .githooks
+	say "hooks: pointed core.hooksPath at .githooks"
+fi
+
+for hook in .githooks/*; do
+	[ -f "$hook" ] || continue
+	if [ ! -x "$hook" ]; then
+		chmod +x "$hook"
+		say "hooks: made $hook executable"
+	fi
+done
+
+# cairn's merge driver, so two branches that both touched the backlog resolve
+# without a conflict on generated files.
+if command -v cairn >/dev/null 2>&1; then
+	if [ "$(git config --get merge.cairn.driver 2>/dev/null || true)" = "" ]; then
+		cairn init --git >/dev/null 2>&1 || warn "cairn init --git failed; the backlog merge driver is not installed"
+		say "backlog: installed cairn's merge driver"
+	else
+		say "backlog: cairn merge driver already installed"
+	fi
+else
+	warn "cairn is not installed; the backlog is readable as plain Markdown without it"
+	warn "  cargo install cairn"
+fi
+
+# Toolchain.
+if command -v cargo >/dev/null 2>&1; then
+	say "toolchain: $(cargo --version)"
+else
+	warn "cargo is not installed; see https://rustup.rs"
+	missing=1
+fi
+
+if command -v gh >/dev/null 2>&1; then
+	say "gh: $(gh --version | head -n 1)"
+else
+	warn "gh is not installed; scripts/agent pr and done need it"
+fi
+
+if [ "$missing" -ne 0 ]; then
+	printf '\nsetup: incomplete; install what is listed above and run it again\n' >&2
+	exit 1
+fi
+
+printf '\n'
+say "ready. next: ./scripts/task check"

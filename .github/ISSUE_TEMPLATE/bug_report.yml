@@ -1,0 +1,36 @@
+name: Bug report
+description: Something behaves differently from what it promised
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happens
+    attributes:
+      label: What happens
+      description: Include the exact command and its output.
+    validations:
+      required: true
+  - type: textarea
+    id: what-should-happen
+    attributes:
+      label: What should happen
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: The smallest source and commands that show it.
+      placeholder: |
+        1. cat > x.oath <<'END'
+           ...
+           END
+        2. oath swear x.oath
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `oath --version`, or the commit.
+    validations:
+      required: true

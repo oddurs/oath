@@ -21,6 +21,6 @@ area: infra
 
 ## Acceptance criteria
 
-- [ ] running it twice changes nothing the second time and says so
+- [x] running it twice changes nothing the second time and says so
 - [ ] after a fresh clone and `scripts/setup`, `scripts/agent doctor` reports ready
-- [ ] it exits non-zero with an actionable message when a required tool is missing
+- [x] it exits non-zero with an actionable message when a required tool is missing

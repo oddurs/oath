@@ -28,4 +28,4 @@ Issues and pull requests arrive shapeless without a template, and editors disagr
 
 - [ ] opening a pull request pre-fills the template
 - [ ] the issue forms render as forms on GitHub, and blank issues are refused
-- [ ] `.editorconfig` does not contradict `cargo fmt` on any file in the repository
+- [x] `.editorconfig` does not contradict `cargo fmt` on any file in the repository

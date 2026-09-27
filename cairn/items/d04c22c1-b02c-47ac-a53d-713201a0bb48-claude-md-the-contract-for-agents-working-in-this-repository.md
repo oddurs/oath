@@ -21,6 +21,6 @@ An agent joining this repository needs the workflow and the conventions in one p
 
 ## Acceptance criteria
 
-- [ ] it names the seam, the workflow, the commit convention, and the attribution ban
-- [ ] it is under 200 lines and contains nothing that duplicates `CONTRIBUTING.md`
-- [ ] it tells an agent to run `cairn next` to find work
+- [x] it names the seam, the workflow, the commit convention, and the attribution ban
+- [x] it is under 200 lines and contains nothing that duplicates `CONTRIBUTING.md`
+- [x] it tells an agent to run `cairn next` to find work

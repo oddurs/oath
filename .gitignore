@@ -2,3 +2,10 @@
 
 # .oath/store is deliberately absent: the sworn records are the evidence and
 # belong in the repository, the way a lockfile does. See docs/design.md.
+
+# Worktrees live beside the repository, but guard against a nested one.
+.worktrees/
+
+# OS and editor cruft.
+.DS_Store
+*.swp

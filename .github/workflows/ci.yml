@@ -1,0 +1,58 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: check (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      # rust-toolchain.toml pins the version and the components; this is what
+      # makes rustup honour it before the first cargo invocation.
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock', 'rust-toolchain.toml') }}
+          restore-keys: ${{ runner.os }}-cargo-
+
+      # The one command. CI knows nothing stack-specific, so it cannot drift
+      # from what the hooks run locally.
+      - run: ./scripts/task check
+
+  # The single status check branch protection points at. It exists so the
+  # protection rule never has to name a matrix leg.
+  required:
+    name: required
+    needs: [check]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify every job succeeded
+        run: |
+          if [ "${{ needs.check.result }}" != "success" ]; then
+            echo "check: ${{ needs.check.result }}"
+            exit 1
+          fi
+          echo "all jobs succeeded"

@@ -23,5 +23,5 @@ A release built by hand is a release nobody can reproduce.
 
 ## Acceptance criteria
 
-- [ ] the workflow file is valid and its check job reuses `scripts/task check`
+- [x] the workflow file is valid and its check job reuses `scripts/task check`
 - [ ] generated notes contain no assistant attribution
