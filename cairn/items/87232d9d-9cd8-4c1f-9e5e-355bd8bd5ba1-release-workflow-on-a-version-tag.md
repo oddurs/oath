@@ -25,3 +25,7 @@ A release built by hand is a release nobody can reproduce.
 
 - [x] the workflow file is valid and its check job reuses `scripts/task check`
 - [ ] generated notes contain no assistant attribution
+
+## 2026-09-26
+
+The workflow is written and its check job reuses the seam. The second criterion needs a real tag, so this stays open until the first release.

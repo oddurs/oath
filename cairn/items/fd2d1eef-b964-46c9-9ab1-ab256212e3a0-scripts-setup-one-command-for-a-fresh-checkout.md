@@ -2,7 +2,7 @@
 id: fd2d1eef-b964-46c9-9ab1-ab256212e3a0
 title: 'scripts/setup: one command for a fresh checkout'
 type: chore
-status: planned
+status: done
 milestone: v0.1
 created: 2026-09-26
 updated: 2026-09-26
@@ -22,5 +22,5 @@ area: infra
 ## Acceptance criteria
 
 - [x] running it twice changes nothing the second time and says so
-- [ ] after a fresh clone and `scripts/setup`, `scripts/agent doctor` reports ready
+- [x] after a fresh clone and `scripts/setup`, `scripts/agent doctor` reports ready
 - [x] it exits non-zero with an actionable message when a required tool is missing
