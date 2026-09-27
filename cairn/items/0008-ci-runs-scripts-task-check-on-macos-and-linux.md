@@ -7,7 +7,7 @@ milestone: v0.1
 depends_on:
 - 1e5cca1f-d115-4609-bbe6-ea9f72440be0
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-26
 priority: p0
 effort: s
 area: infra
@@ -25,3 +25,7 @@ GitHub Actions matrix (ubuntu-latest, macos-latest) that runs only `scripts/task
 
 - [ ] a PR shows green on both platforms
 - [ ] a deliberately failing test turns the PR red
+
+## 2026-09-26
+
+Branch protection requires a single status check, so CI needs a 'required' job that needs every other job. That name is what the protection rule points at, so changing it breaks the gate silently.

@@ -4,35 +4,43 @@
 
 ## v0.1 — v0.1
 
-`#·········` 5% · 1 of 20 done · due 2026-10-31
+`#·········` 4% · 1 of 28 done · due 2026-10-31
 
 `oath run hello.oath` runs a pure program. `oath swear hello.oath` checks every keeper against its oath's examples, records the verdict in a store keyed by the oath's hash, and prints it. Every call site resolves through the oath to a sworn keeper. Editing an oath un-swears its keepers, visibly. That last line is the idea, and it is in v0.1 so a stranger feels it on day one.
 
 ### planned
 
-- [ ] `0008` CI runs scripts/task check on macOS and Linux <sup>chore · p0 · infra</sup>
-- [ ] `0009` Golden-file harness for .oath programs <sup>chore · p0 · infra</sup>
-- [ ] `0010` Lexer with source spans <sup>feature · p0 · syntax</sup>
-- [ ] `0011` Parser for the core expression language <sup>feature · p0 · syntax</sup>
-- [ ] `0012` Parse oath declarations with signature and examples <sup>feature · p0 · syntax</sup>
-- [ ] `0013` Parse keeper bodies <sup>feature · p0 · syntax</sup>
-- [ ] `0014` Diagnostics with file:line:col and a caret <sup>feature · p0 · syntax</sup>
-- [ ] `0018` Tree-walking evaluator for core expressions <sup>feature · p0 · eval</sup>
-- [ ] `0019` Runtime errors carry spans and exit 1 <sup>feature · p1 · eval</sup>
-- [ ] `0020` Spike: canonical form and hash of an oath <sup>spike · p0 · oath</sup>
-- [ ] `0021` Canonicalise and hash oaths; oath hash subcommand <sup>feature · p0 · oath</sup>
-- [ ] `0022` Swearing by examples; oath swear subcommand <sup>feature · p0 · oath</sup>
-- [ ] `0023` Call sites resolve through the oath to a sworn keeper <sup>feature · p0 · eval</sup>
-- [ ] `0024` oath binary: run, swear, hash, --help <sup>feature · p0 · cli</sup>
-- [ ] `0025` README: install from source and the first sworn program <sup>docs · p0 · docs</sup>
-- [ ] `0040` Keeper identity: hash of the body <sup>feature · p0 · oath</sup>
-- [ ] `0041` Keeper store on disk with sworn records <sup>feature · p0 · oath</sup>
-- [ ] `0042` Oath change un-swears its keepers visibly <sup>feature · p0 · oath</sup>
-- [ ] `0096` Runtime contract check at the oath boundary <sup>feature · p0 · oath</sup>
+- [ ] `00b844e9` Call sites resolve through the oath to a sworn keeper <sup>feature · p0 · eval</sup>
+- [ ] `077ae825` Swearing by examples; oath swear subcommand <sup>feature · p0 · oath</sup>
+- [ ] `19e43dee` pre-push hook refuses a push to the default branch <sup>chore · p0 · infra</sup>
+- [ ] `1c5423ff` Diagnostics with file:line:col and a caret <sup>feature · p0 · syntax</sup>
+- [ ] `29db0670` Spike: canonical form and hash of an oath <sup>spike · p0 · oath</sup>
+- [ ] `35a4f75b` Keeper store on disk with sworn records <sup>feature · p0 · oath</sup>
+- [ ] `37875bb2` Tree-walking evaluator for core expressions <sup>feature · p0 · eval</sup>
+- [ ] `45551b47` Parser for the core expression language <sup>feature · p0 · syntax</sup>
+- [ ] `4950905e` oath binary: run, swear, hash, --help <sup>feature · p0 · cli</sup>
+- [ ] `55fcecb3` Oath change un-swears its keepers visibly <sup>feature · p0 · oath</sup>
+- [ ] `5d43d6fa` Canonicalise and hash oaths; oath hash subcommand <sup>feature · p0 · oath</sup>
+- [ ] `686d01b4` Runtime errors carry spans and exit 1 <sup>feature · p1 · eval</sup>
+- [ ] `6da39fe2` Repository templates and hygiene files <sup>chore · p1 · infra</sup>
+- [ ] `73ab165c` Keeper identity: hash of the body <sup>feature · p0 · oath</sup>
+- [ ] `7523f3ee` Golden-file harness for .oath programs <sup>chore · p0 · infra</sup>
+- [ ] `7ac5641a` Lexer with source spans <sup>feature · p0 · syntax</sup>
+- [ ] `87232d9d` Release workflow on a version tag <sup>chore · p2 · infra</sup>
+- [ ] `885a142e` Runtime contract check at the oath boundary <sup>feature · p0 · oath</sup>
+- [ ] `90e139dc` Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security <sup>docs · p0 · docs</sup>
+- [ ] `9ef6fdb5` Prove the whole loop end to end once <sup>chore · p0 · infra</sup>
+- [ ] `b878db8a` CI runs scripts/task check on macOS and Linux <sup>chore · p0 · infra</sup>
+- [ ] `c362d83c` Publish the repository and enforce the workflow on the server <sup>chore · p0 · infra</sup>
+- [ ] `d04c22c1` CLAUDE.md: the contract for agents working in this repository <sup>docs · p1 · docs</sup>
+- [ ] `d69d21e3` Parse oath declarations with signature and examples <sup>feature · p0 · syntax</sup>
+- [ ] `d73c6445` README: install from source and the first sworn program <sup>docs · p0 · docs</sup>
+- [ ] `d9310c65` Parse keeper bodies <sup>feature · p0 · syntax</sup>
+- [ ] `fd2d1eef` scripts/setup: one command for a fresh checkout <sup>chore · p1 · infra</sup>
 
 ### done
 
-- [x] `0007` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
+- [x] `1e5cca1f` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
 
 ## v0.2 — v0.2
 
@@ -42,27 +50,27 @@ Oaths carry `law` properties checked by small-scope enumeration with the smalles
 
 ### backlog
 
-- [ ] `0027` Parse law clauses in oaths <sup>feature · p0 · syntax</sup>
-- [ ] `0028` Str and Unit types with literals <sup>feature · p1 · syntax</sup>
-- [ ] `0029` User-defined data types <sup>feature · p1 · eval</sup>
-- [ ] `0032` Parse effect declarations with state cells, external ops, try <sup>feature · p0 · syntax</sup>
-- [ ] `0034` Irreversible ops are refused inside try and during swearing <sup>feature · p0 · effects</sup>
-- [ ] `0035` Automatic undo journal of cell writes <sup>feature · p0 · effects</sup>
-- [ ] `0036` try/else rolls back to the block entry <sup>feature · p0 · effects</sup>
-- [ ] `0037` Handlers with one-shot resumption <sup>feature · p0 · effects</sup>
-- [ ] `0038` Small-scope value generator <sup>feature · p0 · oath</sup>
-- [ ] `0039` Laws checked during swearing with smallest counterexample <sup>feature · p0 · oath</sup>
-- [ ] `0043` oath who: provenance per keeper <sup>feature · p1 · cli</sup>
-- [ ] `0046` Swear effectful keepers under rollback <sup>feature · p0 · oath</sup>
-- [ ] `0047` Prelude written in Oath <sup>feature · p1 · stdlib</sup>
-- [ ] `0048` Docs: laws, and effects that can be undone <sup>docs · p0 · docs</sup>
-- [ ] `0049` Golden tests for rollback, laws, store <sup>chore · p0 · infra</sup>
-- [ ] `0059` oath trace: step backwards through the journal <sup>feature · p1 · effects</sup>
-- [ ] `0097` Structural checks for effects and laws <sup>feature · p0 · syntax</sup>
-- [ ] `0098` Keeper selection: source order, then stored-only keepers; --prefer overrides <sup>feature · p1 · eval</sup>
-- [ ] `0118` Examples and laws over effect state: given and then <sup>feature · p0 · oath</sup>
-- [ ] `0119` Generator: function arguments from a table, polymorphic oaths at Int <sup>feature · p1 · oath</sup>
-- [ ] `0121` Preconditions: requires clauses on oaths <sup>feature · p0 · oath</sup>
+- [ ] `01a26824` Str and Unit types with literals <sup>feature · p1 · syntax</sup>
+- [ ] `0d5c6a89` Parse effect declarations with state cells, external ops, try <sup>feature · p0 · syntax</sup>
+- [ ] `2127e390` Handlers with one-shot resumption <sup>feature · p0 · effects</sup>
+- [ ] `2b1692b6` oath trace: step backwards through the journal <sup>feature · p1 · effects</sup>
+- [ ] `2d1cc97f` Structural checks for effects and laws <sup>feature · p0 · syntax</sup>
+- [ ] `391c86fa` Keeper selection: source order, then stored-only keepers; --prefer overrides <sup>feature · p1 · eval</sup>
+- [ ] `3cb4f026` try/else rolls back to the block entry <sup>feature · p0 · effects</sup>
+- [ ] `437b3e57` Parse law clauses in oaths <sup>feature · p0 · syntax</sup>
+- [ ] `470bab2e` Generator: function arguments from a table, polymorphic oaths at Int <sup>feature · p1 · oath</sup>
+- [ ] `4e904923` Preconditions: requires clauses on oaths <sup>feature · p0 · oath</sup>
+- [ ] `5037e1bb` Examples and laws over effect state: given and then <sup>feature · p0 · oath</sup>
+- [ ] `6949cdea` Golden tests for rollback, laws, store <sup>chore · p0 · infra</sup>
+- [ ] `7f1da788` Automatic undo journal of cell writes <sup>feature · p0 · effects</sup>
+- [ ] `8ebc5430` Docs: laws, and effects that can be undone <sup>docs · p0 · docs</sup>
+- [ ] `908186e3` Small-scope value generator <sup>feature · p0 · oath</sup>
+- [ ] `a3a03c1d` Irreversible ops are refused inside try and during swearing <sup>feature · p0 · effects</sup>
+- [ ] `aefffbd4` oath who: provenance per keeper <sup>feature · p1 · cli</sup>
+- [ ] `d51033b2` Swear effectful keepers under rollback <sup>feature · p0 · oath</sup>
+- [ ] `e29e8d64` Laws checked during swearing with smallest counterexample <sup>feature · p0 · oath</sup>
+- [ ] `e79e4682` User-defined data types <sup>feature · p1 · eval</sup>
+- [ ] `f74a2d05` Prelude written in Oath <sup>feature · p1 · stdlib</sup>
 
 ## v0.3 — v0.3
 
@@ -72,18 +80,18 @@ A hole is an oath with no keeper, and now reaching one at runtime fires the `Kee
 
 ### backlog
 
-- [ ] `0045` Differential check across sworn keepers <sup>feature · p1 · oath</sup>
-- [ ] `0051` Pretty-printer for oaths and keepers <sup>feature · p0 · syntax</sup>
-- [ ] `0053` Reaching a hole raises the Keep effect <sup>feature · p0 · holes</sup>
-- [ ] `0054` Keeper source: pause into a REPL <sup>feature · p0 · holes</sup>
-- [ ] `0055` Keeper source: search the store by oath <sup>feature · p1 · holes</sup>
-- [ ] `0056` Spike: sandboxing an externally proposed keeper <sup>spike · p0 · holes</sup>
-- [ ] `0057` Keeper source: external command <sup>feature · p0 · holes</sup>
-- [ ] `0058` Trial mode runs unsworn keepers loudly <sup>feature · p1 · oath</sup>
-- [ ] `0060` oath repl <sup>feature · p1 · cli</sup>
-- [ ] `0061` Docs: holes and the Keep effect <sup>docs · p0 · docs</sup>
-- [ ] `0062` Golden harness: scripted stdin and subprocess sources <sup>chore · p0 · infra</sup>
-- [ ] `0099` Parse hole keepers <sup>feature · p0 · syntax</sup>
+- [ ] `03dcafbc` Keeper source: external command <sup>feature · p0 · holes</sup>
+- [ ] `7f9eae9c` Parse hole keepers <sup>feature · p0 · syntax</sup>
+- [ ] `89012663` oath repl <sup>feature · p1 · cli</sup>
+- [ ] `9a428f40` Keeper source: search the store by oath <sup>feature · p1 · holes</sup>
+- [ ] `b315341f` Golden harness: scripted stdin and subprocess sources <sup>chore · p0 · infra</sup>
+- [ ] `bb9fda78` Keeper source: pause into a REPL <sup>feature · p0 · holes</sup>
+- [ ] `c35dc1a0` Spike: sandboxing an externally proposed keeper <sup>spike · p0 · holes</sup>
+- [ ] `ca1c532d` Pretty-printer for oaths and keepers <sup>feature · p0 · syntax</sup>
+- [ ] `cba18afe` Differential check across sworn keepers <sup>feature · p1 · oath</sup>
+- [ ] `e5c55be7` Trial mode runs unsworn keepers loudly <sup>feature · p1 · oath</sup>
+- [ ] `ed6545a8` Docs: holes and the Keep effect <sup>docs · p0 · docs</sup>
+- [ ] `f84f6083` Reaching a hole raises the Keep effect <sup>feature · p0 · holes</sup>
 
 ## v0.4 — v0.4
 
@@ -93,18 +101,18 @@ Programs span files. `use ./lib.oath` imports by path; `use sort = oath:<hash>` 
 
 ### backlog
 
-- [ ] `0100` Spike: module identity and where the store lives <sup>spike · p0 · oath</sup>
-- [ ] `0101` Parse use declarations <sup>feature · p0 · syntax</sup>
-- [ ] `0102` Resolve imported oaths by hash from the store <sup>feature · p0 · oath</sup>
-- [ ] `0103` Import oaths from another file by path <sup>feature · p0 · oath</sup>
-- [ ] `0104` Renaming an oath breaks no importer <sup>feature · p0 · oath</sup>
-- [ ] `0105` Imported oath with no sworn keeper fires Keep <sup>feature · p0 · holes</sup>
-- [ ] `0106` oath ls: browse the store <sup>feature · p1 · cli</sup>
-- [ ] `0107` Global store with project overlay <sup>feature · p1 · oath</sup>
-- [ ] `0108` oath pack / unpack: hand a store bundle to someone <sup>feature · p2 · oath</sup>
-- [ ] `0109` Hash-qualified names in diagnostics <sup>feature · p1 · syntax</sup>
-- [ ] `0110` Docs: many files <sup>docs · p0 · docs</sup>
-- [ ] `0111` Golden harness: multi-file cases <sup>chore · p0 · infra</sup>
+- [ ] `0ef2a5d2` oath pack / unpack: hand a store bundle to someone <sup>feature · p2 · oath</sup>
+- [ ] `2b8e6f43` Golden harness: multi-file cases <sup>chore · p0 · infra</sup>
+- [ ] `82e2c71c` Parse use declarations <sup>feature · p0 · syntax</sup>
+- [ ] `8f5a853f` Docs: many files <sup>docs · p0 · docs</sup>
+- [ ] `9b9db40a` Hash-qualified names in diagnostics <sup>feature · p1 · syntax</sup>
+- [ ] `b1f23c1d` Spike: module identity and where the store lives <sup>spike · p0 · oath</sup>
+- [ ] `c333a4b2` Import oaths from another file by path <sup>feature · p0 · oath</sup>
+- [ ] `dbf78240` Imported oath with no sworn keeper fires Keep <sup>feature · p0 · holes</sup>
+- [ ] `dcb3d53d` Renaming an oath breaks no importer <sup>feature · p0 · oath</sup>
+- [ ] `dd7f2792` oath ls: browse the store <sup>feature · p1 · cli</sup>
+- [ ] `f61ea3f6` Resolve imported oaths by hash from the store <sup>feature · p0 · oath</sup>
+- [ ] `fb988ccb` Global store with project overlay <sup>feature · p1 · oath</sup>
 
 ## v1.0 — v1.0
 
@@ -114,18 +122,18 @@ No new surface. The language reference and tutorial are complete, the store form
 
 ### backlog
 
-- [ ] `0075` Language reference <sup>docs · p0 · docs</sup>
-- [ ] `0077` Versioned store format with migration <sup>feature · p0 · oath</sup>
-- [ ] `0078` Pin golden hashes for the examples <sup>chore · p0 · oath</sup>
-- [ ] `0079` Error message audit <sup>chore · p0 · cli</sup>
-- [ ] `0080` Fuzz parser and canonicaliser <sup>chore · p1 · infra</sup>
-- [ ] `0081` Install: cargo install and prebuilt binaries <sup>chore · p0 · infra</sup>
-- [ ] `0082` Freeze the CLI and remove experimental flags <sup>chore · p0 · cli</sup>
-- [ ] `0083` Performance floor and benchmark in CI <sup>chore · p1 · infra</sup>
-- [ ] `0084` CHANGELOG, LICENSE, CONTRIBUTING <sup>docs · p0 · docs</sup>
-- [ ] `0086` Tag v1.0 and write the announcement <sup>chore · p0 · infra</sup>
-- [ ] `0112` Tutorial: zero to a shared promise <sup>docs · p0 · docs</sup>
-- [ ] `0113` Bug bash: three programs by someone else <sup>chore · p1 · docs</sup>
+- [ ] `258b99b1` Language reference <sup>docs · p0 · docs</sup>
+- [ ] `3a57635b` Freeze the CLI and remove experimental flags <sup>chore · p0 · cli</sup>
+- [ ] `43f6d277` Install: cargo install and prebuilt binaries <sup>chore · p0 · infra</sup>
+- [ ] `5182643a` Fuzz parser and canonicaliser <sup>chore · p1 · infra</sup>
+- [ ] `77339e8e` Error message audit <sup>chore · p0 · cli</sup>
+- [ ] `92d3a341` Tutorial: zero to a shared promise <sup>docs · p0 · docs</sup>
+- [ ] `b1c28b27` Versioned store format with migration <sup>feature · p0 · oath</sup>
+- [ ] `d507cb0c` Performance floor and benchmark in CI <sup>chore · p1 · infra</sup>
+- [ ] `dc1d9fb3` Tag v1.0 and write the announcement <sup>chore · p0 · infra</sup>
+- [ ] `f0a8ea58` CHANGELOG is true, one entry per milestone <sup>docs · p0 · docs</sup>
+- [ ] `f2ae4108` Pin golden hashes for the examples <sup>chore · p0 · oath</sup>
+- [ ] `f674a8c9` Bug bash: three programs by someone else <sup>chore · p1 · docs</sup>
 
 ## later — later
 
@@ -135,19 +143,19 @@ Nothing on a date. Good ideas that are not on the path to v1.0 live here so they
 
 ### backlog
 
-- [ ] `0087` Proof terms as swearing evidence <sup>feature · p2 · oath</sup>
-- [ ] `0088` Package registry: share oaths and sworn keepers by hash <sup>feature · p2 · oath</sup>
-- [ ] `0089` Hosted model keeper source as a first-party plugin <sup>feature · p2 · holes</sup>
-- [ ] `0090` Bytecode VM or native backend <sup>feature · p2 · eval</sup>
-- [ ] `0091` Parallel evaluation of pure keepers <sup>feature · p2 · eval</sup>
-- [ ] `0092` LSP with hole-aware completion <sup>feature · p2 · cli</sup>
-- [ ] `0093` Multi-shot continuations in handlers <sup>feature · p2 · effects</sup>
-- [ ] `0094` Records <sup>feature · p2 · types</sup>
-- [ ] `0095` Quorum swearing: N independent producers must agree <sup>feature · p2 · oath</sup>
-- [ ] `0114` Static type system <sup>feature · p2 · types</sup>
-- [ ] `0115` Expression-level holes <sup>feature · p2 · holes</sup>
-- [ ] `0116` Effect rows on oath signatures <sup>feature · p2 · types</sup>
-- [ ] `0117` Multi-party oaths: choreographies with endpoint projection <sup>feature · p2 · choreo</sup>
-- [ ] `0120` oath fmt: canonical formatting from the pretty-printer <sup>feature · p2 · cli</sup>
-- [ ] `0122` Random generation with shrinking, beyond small scope <sup>feature · p2 · oath</sup>
+- [ ] `28f9db0e` Package registry: share oaths and sworn keepers by hash <sup>feature · p2 · oath</sup>
+- [ ] `3dceef27` Random generation with shrinking, beyond small scope <sup>feature · p2 · oath</sup>
+- [ ] `4b937310` Quorum swearing: N independent producers must agree <sup>feature · p2 · oath</sup>
+- [ ] `527f6d52` Multi-shot continuations in handlers <sup>feature · p2 · effects</sup>
+- [ ] `576f57b1` Records <sup>feature · p2 · types</sup>
+- [ ] `6a1a4c4b` Expression-level holes <sup>feature · p2 · holes</sup>
+- [ ] `7f3964f8` Effect rows on oath signatures <sup>feature · p2 · types</sup>
+- [ ] `8cdc2e18` oath fmt: canonical formatting from the pretty-printer <sup>feature · p2 · cli</sup>
+- [ ] `9330d99e` Multi-party oaths: choreographies with endpoint projection <sup>feature · p2 · choreo</sup>
+- [ ] `9e5173f2` Bytecode VM or native backend <sup>feature · p2 · eval</sup>
+- [ ] `a01977dc` Static type system <sup>feature · p2 · types</sup>
+- [ ] `a44abae0` Parallel evaluation of pure keepers <sup>feature · p2 · eval</sup>
+- [ ] `d250c5f4` Proof terms as swearing evidence <sup>feature · p2 · oath</sup>
+- [ ] `f2852ecc` Hosted model keeper source as a first-party plugin <sup>feature · p2 · holes</sup>
+- [ ] `ff850006` LSP with hole-aware completion <sup>feature · p2 · cli</sup>
 

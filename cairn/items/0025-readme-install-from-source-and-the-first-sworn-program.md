@@ -9,7 +9,7 @@ depends_on:
 - 4950905e-b874-422e-b613-61ab15297f2e
 - 55fcecb3-5ef2-46d1-a952-7139eb533e58
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-26
 priority: p0
 effort: s
 area: docs
@@ -27,3 +27,7 @@ README with: the one-sentence pitch, `cargo install --path .`, a 20-line program
 
 - [ ] every command in the README is copied from a golden test so it cannot rot
 - [ ] the program in the README is `examples/readme.oath` and is in the golden suite
+
+## 2026-09-26
+
+The bootstrap README lands earlier, at publication, describing what runs today. This item is the update that adds the first sworn program once the loop works. Do not write a second README; extend that one.
