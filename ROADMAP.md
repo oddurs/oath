@@ -4,7 +4,7 @@
 
 ## v0.1 — v0.1
 
-`###·······` 29% · 8 of 28 done · due 2026-10-31
+`####······` 32% · 9 of 28 done · due 2026-10-31
 
 `oath run hello.oath` runs a pure program. `oath swear hello.oath` checks every keeper against its oath's examples, records the verdict in a store keyed by the oath's hash, and prints it. Every call site resolves through the oath to a sworn keeper. Editing an oath un-swears its keepers, visibly. That last line is the idea, and it is in v0.1 so a stranger feels it on day one.
 
@@ -12,7 +12,6 @@
 
 - [ ] `00b844e9` Call sites resolve through the oath to a sworn keeper <sup>feature · p0 · eval</sup>
 - [ ] `077ae825` Swearing by examples; oath swear subcommand <sup>feature · p0 · oath</sup>
-- [ ] `1c5423ff` Diagnostics with file:line:col and a caret <sup>feature · p0 · syntax</sup>
 - [ ] `29db0670` Spike: canonical form and hash of an oath <sup>spike · p0 · oath</sup>
 - [ ] `35a4f75b` Keeper store on disk with sworn records <sup>feature · p0 · oath</sup>
 - [ ] `37875bb2` Tree-walking evaluator for core expressions <sup>feature · p0 · eval</sup>
@@ -34,6 +33,7 @@
 ### done
 
 - [x] `19e43dee` pre-push hook refuses a push to the default branch <sup>chore · p0 · infra</sup>
+- [x] `1c5423ff` Diagnostics with file:line:col and a caret <sup>feature · p0 · syntax</sup>
 - [x] `1e5cca1f` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
 - [x] `7ac5641a` Lexer with source spans <sup>feature · p0 · syntax</sup>
 - [x] `90e139dc` Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security <sup>docs · p0 · docs</sup>
