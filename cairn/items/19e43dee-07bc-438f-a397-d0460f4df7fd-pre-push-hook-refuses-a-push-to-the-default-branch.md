@@ -2,7 +2,7 @@
 id: 19e43dee-07bc-438f-a397-d0460f4df7fd
 title: pre-push hook refuses a push to the default branch
 type: chore
-status: planned
+status: done
 milestone: v0.1
 created: 2026-09-26
 updated: 2026-09-26
@@ -21,6 +21,6 @@ Branch protection stops a direct push to the default branch at the server, which
 
 ## Acceptance criteria
 
-- [ ] a push to the default branch is refused locally with a message naming the branch
-- [ ] a push to a feature branch runs the full check and succeeds
-- [ ] committing no longer runs the test suite, and the timing difference is noted in the pull request
+- [x] a push to the default branch is refused locally with a message naming the branch
+- [x] a push to a feature branch runs the full check and succeeds
+- [x] committing no longer runs the test suite, and the timing difference is noted in the pull request

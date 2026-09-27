@@ -4,7 +4,7 @@
 
 ## v0.1 — v0.1
 
-`#·········` 4% · 1 of 28 done · due 2026-10-31
+`###·······` 25% · 7 of 28 done · due 2026-10-31
 
 `oath run hello.oath` runs a pure program. `oath swear hello.oath` checks every keeper against its oath's examples, records the verdict in a store keyed by the oath's hash, and prints it. Every call site resolves through the oath to a sworn keeper. Editing an oath un-swears its keepers, visibly. That last line is the idea, and it is in v0.1 so a stranger feels it on day one.
 
@@ -12,7 +12,6 @@
 
 - [ ] `00b844e9` Call sites resolve through the oath to a sworn keeper <sup>feature · p0 · eval</sup>
 - [ ] `077ae825` Swearing by examples; oath swear subcommand <sup>feature · p0 · oath</sup>
-- [ ] `19e43dee` pre-push hook refuses a push to the default branch <sup>chore · p0 · infra</sup>
 - [ ] `1c5423ff` Diagnostics with file:line:col and a caret <sup>feature · p0 · syntax</sup>
 - [ ] `29db0670` Spike: canonical form and hash of an oath <sup>spike · p0 · oath</sup>
 - [ ] `35a4f75b` Keeper store on disk with sworn records <sup>feature · p0 · oath</sup>
@@ -28,19 +27,20 @@
 - [ ] `7ac5641a` Lexer with source spans <sup>feature · p0 · syntax</sup>
 - [ ] `87232d9d` Release workflow on a version tag <sup>chore · p2 · infra</sup>
 - [ ] `885a142e` Runtime contract check at the oath boundary <sup>feature · p0 · oath</sup>
-- [ ] `90e139dc` Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security <sup>docs · p0 · docs</sup>
-- [ ] `9ef6fdb5` Prove the whole loop end to end once <sup>chore · p0 · infra</sup>
 - [ ] `b878db8a` CI runs scripts/task check on macOS and Linux <sup>chore · p0 · infra</sup>
-- [ ] `c362d83c` Publish the repository and enforce the workflow on the server <sup>chore · p0 · infra</sup>
-- [ ] `d04c22c1` CLAUDE.md: the contract for agents working in this repository <sup>docs · p1 · docs</sup>
 - [ ] `d69d21e3` Parse oath declarations with signature and examples <sup>feature · p0 · syntax</sup>
 - [ ] `d73c6445` README: install from source and the first sworn program <sup>docs · p0 · docs</sup>
 - [ ] `d9310c65` Parse keeper bodies <sup>feature · p0 · syntax</sup>
-- [ ] `fd2d1eef` scripts/setup: one command for a fresh checkout <sup>chore · p1 · infra</sup>
 
 ### done
 
+- [x] `19e43dee` pre-push hook refuses a push to the default branch <sup>chore · p0 · infra</sup>
 - [x] `1e5cca1f` Single crate oath-lang, binary oath, scripts/task seam <sup>chore · p0 · infra</sup>
+- [x] `90e139dc` Open-source furniture: README, LICENSE, CONTRIBUTING, conduct, security <sup>docs · p0 · docs</sup>
+- [x] `9ef6fdb5` Prove the whole loop end to end once <sup>chore · p0 · infra</sup>
+- [x] `c362d83c` Publish the repository and enforce the workflow on the server <sup>chore · p0 · infra</sup>
+- [x] `d04c22c1` CLAUDE.md: the contract for agents working in this repository <sup>docs · p1 · docs</sup>
+- [x] `fd2d1eef` scripts/setup: one command for a fresh checkout <sup>chore · p1 · infra</sup>
 
 ## v0.2 — v0.2
 
